@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<body>
+	<input type="text" id="item">
+	<input type="button" value="Add" id="add" onclick="add();">
+	<input type="button" value="Display" id="dis" onclick="dis();">
+	<div id='result'></div>
+	<script type="text/javascript">
+		var array = [];
+		var i = 0;
+
+		function add(){
+			var item = document.getElementById("item").value;
+			array[i]=item;
+			i++;
+			document.getElementById("item").value = '';
+		}
+
+		function dis(){
+			var e = '<hr/>';
+			for (var y = 0; y < array.length; y++) {
+				e += 'Element ' + y + ' = ' + array[y] + '<br/>';
+			}
+			document.getElementById('result').innerHTML=e;
+		}
+	</script>
+</body>
+</html>
